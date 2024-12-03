@@ -21,7 +21,7 @@ public struct Blueprint has key {
     has_restroom: bool,
     has_smoking_room: bool,
     has_telephone: bool,
-    seats: vector<Seat>,
+    seats: vector<vector<Seat>>,
 }
 
 public fun new(
@@ -53,8 +53,9 @@ public fun new(
     blueprint
 }
 
-public fun add_seat(blueprint: &mut Blueprint, seat: Seat) {
-    blueprint.seats.push_back(seat);
+public fun add_seat(blueprint: &mut Blueprint, row: u8, seat: Seat) {
+    let row = &mut blueprint.seats[row as u64];
+    row.push_back(seat);
 }
 
 public fun id(blueprint: &Blueprint): ID {
@@ -97,6 +98,6 @@ public fun has_telephone(blueprint: &Blueprint): bool {
     blueprint.has_telephone
 }
 
-public fun seats(blueprint: &Blueprint): vector<Seat> {
+public fun seats(blueprint: &Blueprint): vector<vector<Seat>> {
     blueprint.seats
 }

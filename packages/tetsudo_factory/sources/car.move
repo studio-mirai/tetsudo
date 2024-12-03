@@ -17,7 +17,9 @@ public struct Car has key, store {
     has_restroom: bool,
     has_smoking_room: bool,
     has_telephone: bool,
-    seats: vector<Seat>,
+    // A 2D vector of Seats, where the first dimension is the row and the second dimension is the seat.
+    // For example, seats[0] could be a five-seat row that like so: [Seat(), Seat(), Seat(), Seat(), Seat()].
+    seats: vector<vector<Seat>>,
 }
 
 public fun new(blueprint: &Blueprint, ctx: &mut TxContext): Car {
