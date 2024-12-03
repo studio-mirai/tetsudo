@@ -1,3 +1,5 @@
+// A `Seat` is a seat in a train car.
+
 module tetsudo_factory::seat;
 
 use std::string::String;

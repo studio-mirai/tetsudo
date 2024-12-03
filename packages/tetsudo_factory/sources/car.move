@@ -1,3 +1,5 @@
+// A `Car` is created with a `Blueprint`, and represents a train car.
+
 module tetsudo_factory::car;
 
 use std::string::String;

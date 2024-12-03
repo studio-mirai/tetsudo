@@ -1,3 +1,10 @@
+// `Blueprint` is a template for a train car.
+// The fields of the `Blueprint` are based on the N700 series Shinkansen.
+// https://en.wikipedia.org/wiki/N700_Series_Shinkansen
+//
+// `Blueprint` can be used as an owned object. Alternatively, it can also be
+// frozen and used as an immutable object (which is probably a cooler way of doing things).
+
 module tetsudo_factory::blueprint;
 
 use std::string::String;
